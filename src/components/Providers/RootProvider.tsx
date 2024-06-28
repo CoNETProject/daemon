@@ -2,7 +2,6 @@ import ProviderProps from './ProviderProps'
 import StoreProvider from './StoreProvider/StoreProvider'
 import ThemeProvider from './ThemeProvider/ThemeProvider'
 import LocalizationProvider from './LocalizationProvider/LocalizationProvider'
-import DocumentMeta from "react-document-meta"
 import React from 'react'
 const meta = {
     title: 'CoNET Platform',
@@ -22,8 +21,7 @@ const RootProvider = ({
     children
 }: ProviderProps) => {
     return (
-        <StoreProvider>
-			<DocumentMeta {...meta}/>
+        <StoreProvider >
             <ThemeProvider>
                 <LocalizationProvider>
                     {children}

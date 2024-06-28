@@ -350,7 +350,8 @@ export type Messages = {
     'platform.miner.register.previouslyClaimed': string
     'platform.miner.register.MinerAni.stop': string
 
-    'platform.daemon.title': string
+    'platform.daemon.title1': string
+	'platform.daemon.title2': string
 
     
 }

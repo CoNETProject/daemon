@@ -353,7 +353,8 @@ const en_US: Messages = {
     'platform.miner.register.previouslyClaimed': 'Previously Claimed',
     'platform.miner.register.MinerAni.stop': 'Stop DePIN',
 
-    'platform.daemon.title': 'Layer Minus Daemon Application Running'
+    'platform.daemon.title1': 'Layer Minus Daemon',
+	'platform.daemon.title2': 'Application Running'
 
     
 }

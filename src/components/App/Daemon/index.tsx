@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import { useIntl } from "react-intl"
 import Container from '@mui/material/Container'
-import Stack from '@mui/material/Stack'
+import {Stack, Box, Link} from '@mui/material'
 
 
 const themeTopArea1 = createTheme ({
@@ -41,11 +41,24 @@ const deamon = () => {
     return (
         <ThemeProvider theme={themeTopArea1}>
             <RootContainer maxWidth="md">
-                <StackContainer direction="column" justifyContent="center" alignItems="center">
-                    
-                    <Typography variant="h4" sx={{color: '#448aff', textAlign: 'center'}}>
-                        { intl.formatMessage({id: 'platform.daemon.title'})}
-                    </Typography>
+                <StackContainer direction="column" justifyContent="center" alignItems="center" spacing={4}>
+					<Box>
+						<Typography variant="h4" sx={{color: '#FFFFFF', textAlign: 'center'}}>
+							{ intl.formatMessage({id: 'platform.daemon.title1'})}
+						</Typography>
+						<Typography variant="h4" sx={{color: '#FFFFFF', textAlign: 'center'}}>
+							{ intl.formatMessage({id: 'platform.daemon.title2'})}
+						</Typography>
+					</Box>
+                    <Box>
+						<Typography variant="h5" sx={{color: '#FFFFFF', textAlign: 'center'}}>
+							Open CoNET Platform locally
+						</Typography>
+
+					</Box>
+					<Box>
+						<Link href="http://localhost:3000" target="_blank" rel="noopener">http://localhost:3000</Link>
+					</Box>
                 </StackContainer>
             </RootContainer>
         </ThemeProvider>

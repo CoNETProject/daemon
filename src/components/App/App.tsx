@@ -3,13 +3,14 @@ import React, {useEffect, useRef} from 'react'
 import useAppState from '../../store/appState/useAppState'
 import { LayoutGroup, motion, useAnimation, useDragControls, useMotionValue, useTransform} from 'framer-motion'
 import { CssVarsProvider, useColorScheme, extendTheme, useTheme } from "@mui/material-next/styles"
-import Box from '@mui/material/Box'
+import {Box} from '@mui/material'
 import SpeedDial from '@mui/material/SpeedDial'
 
 import SpeedDialAction from '@mui/material/SpeedDialAction'
 import {US, CN,JP, TW } from 'country-flag-icons/react/3x2'
 import SvgIcon from '@mui/material/SvgIcon'
 import {Locale} from "../../localization/types"
+import backgroundImage from '../../assets/images/backgroundWeb.png'
 
 import NoDeamon from './Daemon'
 
@@ -66,32 +67,17 @@ const App = () => {
     }
 
     return (
-        <>
+        <div style={{ backgroundImage: `url(${backgroundImage})`, 
+			backgroundPosition: 'center', 
+			backgroundSize: 'cover', 
+			backgroundRepeat: 'no-repeat',
+			width: '100vw'
+			}}>
 
-			<Box sx={{ position: 'absolute', mt: 0, top: '18rem', right: '1rem'}}>
-				<SpeedDial
-					ariaLabel="Language"
-					sx={{ position: 'absolute', bottom: 16, right: 16 , backgroundColor: 'rgba(0,0,0,0)'}}
-					icon={showLocationIcon()}
-					direction='down'
-					
-				>
-					{actions.map(action => (
-						
-						locale !== action.name &&
-							<SpeedDialAction
-								sx={{backgroundColor: 'rgba(0,0,0,0)'}}
-								key={action.name}
-								icon={action.icon}
-								onClick={(n) => setLocale (action.name)}
-								tooltipTitle={action.name}/>
-								
-					))}
-				</SpeedDial>
-			</Box>
+		
 			{switchShow()}
 
-        </>
+        </div>
     )
 }
 
