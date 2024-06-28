@@ -351,7 +351,9 @@ const en_US: Messages = {
     'platform.miner.register.totalRewards': 'My Lifetime Rewards',
     'platform.miner.register.pendingRewards': 'My Pending Rewards',
     'platform.miner.register.previouslyClaimed': 'Previously Claimed',
-    'platform.miner.register.MinerAni.stop': 'Stop DePIN'
+    'platform.miner.register.MinerAni.stop': 'Stop DePIN',
+
+    'platform.daemon.title': 'Layer Minus Daemon Application Running'
 
     
 }

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import ProviderProps from '../ProviderProps'
-import GlobalStyle from '../../UI/Global/Styles'
+import GlobalStyle from '../../UI/Styles'
 import {DefaultTheme, ThemeProvider as StyledComponentsThemeProvider} from 'styled-components'
 import useAppState from '../../../store/appState/useAppState'
 import usePreferredTheme from './usePreferredTheme'
@@ -32,7 +32,6 @@ const ThemeProvider =
 
     return (
         <StyledComponentsThemeProvider theme={themeToConfig[activeTheme]}>
-            <GlobalStyle/>
             <>{children}</>
         </StyledComponentsThemeProvider>
     )

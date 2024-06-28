@@ -348,7 +348,9 @@ const ja_JP: Messages = {
     'platform.miner.register.totalRewards': '獲得するRewardsの合計',
     'platform.miner.register.pendingRewards': '請求待ちRewards',
     'platform.miner.register.previouslyClaimed': 'ラスト転送したRewards',
-    'platform.miner.register.MinerAni.stop': 'DePINを中止'
+    'platform.miner.register.MinerAni.stop': 'DePINを中止',
+
+    'platform.daemon.title': 'Layer Minusガードアプリケーションが実行中'
 }
 
 export default ja_JP

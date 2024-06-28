@@ -355,7 +355,9 @@ const zh_CN: Messages = {
     'platform.miner.register.totalRewards': '獲得總獎勵',
     'platform.miner.register.pendingRewards': '等待轉帳的獎勵',
     'platform.miner.register.previouslyClaimed': '上一次轉帳成功的獎勵',
-    'platform.miner.register.MinerAni.stop': '停止DePIN'
+    'platform.miner.register.MinerAni.stop': '停止DePIN',
+
+    'platform.daemon.title': 'Layer Minus 守護應用運行中'
 
 
 }

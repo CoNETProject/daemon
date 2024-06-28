@@ -36,10 +36,7 @@ import {
 import {Theme} from '../../theme/types'
 import {Locale} from '../../localization/types'
 import {getPreferredLocale} from '../../localization/localization'
-import {detectWindowInnerSize} from "../../utilities/utilities";
-import {WindowInnerSize} from './useAppState'
-import {getWorkerService} from "../../services/workerService/workerService";
-import { profile } from '@conet.project/seguro-worker-lib/build/workerBridge'
+
 
 export type ModalNames = 'settings' | 'manageProfile' | 'addProfile' | 'profilesList' | null
 
@@ -147,7 +144,6 @@ type AppStateReducerState = {
     networkStrength: NetworkStrength
     hasNotification: boolean
     showOverlay: boolean
-    windowInnerSize: WindowInnerSize
     workerServiceIsInitialized: boolean
     theme: Theme
     locale: Locale
@@ -181,7 +177,6 @@ const initialState: AppStateReducerState = {
     networkStrength: 3,
     hasNotification: false,
     showOverlay: false,
-    windowInnerSize: detectWindowInnerSize(),
     workerServiceIsInitialized: false,
     theme: 'Auto',
     locale: getPreferredLocale(),
@@ -242,9 +237,6 @@ const appStateReducer = createReducer(initialState, builder => {
             state.isTouchDevice = action.payload.isTouchDevice
         })
 
-        .addCase(setWindowInnerSize, (state, action) => {
-            state.windowInnerSize = action.payload.windowInnerSize
-        })
 
         .addCase(setShowOverlay, (state, action) => {
             state.showOverlay = action.payload.toggleOverlay
@@ -288,20 +280,6 @@ const appStateReducer = createReducer(initialState, builder => {
 
         .addCase(setClientProfiles, (state, action) => {
             state.clientProfiles = action.payload.profiles
-        })
-
-        .addCase(createClientProfile, (state, action) => {
-            const profiles = [
-                ...getWorkerService().data.profiles
-            ]
-            state.clientProfiles = profiles.reduce((clientProfiles: ClientProfiles, profile) => {
-                if (profile.keyID) {
-					const keyID = profile.keyID
-                    clientProfiles[keyID] = profile
-					profile['shortID'] = keyID.substring(0,2) + keyID.substring(2,6).toUpperCase() + '....' + keyID.substring(keyID.length-4,keyID.length).toUpperCase()
-                }
-                return clientProfiles
-            }, {})
         })
 
         .addCase(updateClientProfile, (state, action) => {

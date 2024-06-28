@@ -350,6 +350,8 @@ export type Messages = {
     'platform.miner.register.previouslyClaimed': string
     'platform.miner.register.MinerAni.stop': string
 
+    'platform.daemon.title': string
+
     
 }
 export type MessagesByLocale = Record<Locale, Messages>

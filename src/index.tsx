@@ -2,9 +2,8 @@ import React from 'react'
 
 import { createRoot } from "react-dom/client"
 import 'modern-normalize'
-import App from './components/App/APP'
+import App from './components/App/App'
 import RootProvider from './components/Providers/RootProvider'
-import GlobalStyle from './components/UI/Global/Styles'
 import './index.css'
 import '../src/font/font.css'
 
@@ -17,7 +16,6 @@ if (rootElement && 'serviceWorker' in navigator) {
 	root.render(
 		
 		<RootProvider>
-			<GlobalStyle/>
 			<App/>
 		</RootProvider>
 		

@@ -338,7 +338,9 @@ const zh_CN: Messages = {
     'platform.miner.register.totalRewards': '获得总奖励',
     'platform.miner.register.pendingRewards': '等待转帐的奖励',
     'platform.miner.register.previouslyClaimed': '上一次转帐成功的奖励',
-    'platform.miner.register.MinerAni.stop': '停止DePIN'
+    'platform.miner.register.MinerAni.stop': '停止DePIN',
+
+    'platform.daemon.title': 'Layer Minus守护应用运行中'
 }
 
 export default zh_CN
